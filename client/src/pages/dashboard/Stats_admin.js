@@ -36,6 +36,7 @@ const Stats_admin = () => {
   const { showStats, isLoading, monthlyApplications } = useAppContext();
   const [tableData, setTableData] = useState([]);
   const [userType, setUserType] = useState('');
+  const [user,setUser]=useState({});
 
   useEffect(() => {
     fetchTableData();
@@ -57,6 +58,7 @@ const Stats_admin = () => {
       .then(response => response.json())
       .then(data => {
         setUserType(data.user.userType);
+        setUser(data.user)
       })
       .catch(error => {
         console.error('Error fetching data:', error);
@@ -69,7 +71,7 @@ const Stats_admin = () => {
 
   return (
     <>
-      {userType === 'Admin' && <h1>Hello Admin</h1>}
+      {userType === 'Admin' && <h1>Hello {user.name}</h1>}
       <StatsContainer />
       {monthlyApplications.length > 0 && <ChartsContainer />}
       <Container>
