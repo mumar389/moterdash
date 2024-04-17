@@ -77,10 +77,11 @@ const getCurrentUser = async (req, res) => {
 };
 
 const logout = async (req, res) => {
-  res.cookie('token', 'logout', {
-    httpOnly: true,
-    expires: new Date(Date.now() + 1000),
-  });
+  // res.cookie('token', 'logout', {
+  //   httpOnly: true,
+  //   expires: new Date(Date.now() + 1000),
+  // });
+  res.cookie('token', null, { expires: new Date(0) });
   res.status(StatusCodes.OK).json({ msg: 'user logged out!' });
 };
 
