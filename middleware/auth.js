@@ -5,6 +5,7 @@ const auth = async (req, res, next) => {
   const token = req.cookies.token;
   console.log("reach1");
   if (!token) {
+    console.log("inside error");
     throw new UnAuthenticatedError('Authentication Invalid');
   }
   try {
