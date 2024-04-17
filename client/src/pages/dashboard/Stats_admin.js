@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import styled from "styled-components";
 import dashboardImage from "../../assets/images/dashboard-image.jpg"; // Import your image
+import Graph from '../../components/Graph';
 
 const Container = styled.div`
   display: flex;
@@ -73,11 +74,10 @@ const Stats_admin = () => {
     <>
       {userType === 'Admin' && <h1>Hello {user.name}</h1>}
       <StatsContainer />
-      {monthlyApplications.length > 0 && <ChartsContainer />}
       <Container>
         <Item xs={12}>
           <ImageContainer>
-            <DashboardImage src={dashboardImage} alt="Dashboard" />
+            <Graph/>
           </ImageContainer>
         </Item>
         <Item xs={12}>
