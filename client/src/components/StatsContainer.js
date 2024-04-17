@@ -17,7 +17,7 @@ const StatsContainer = () => {
 
   const fetchMotorData = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/v1/motor');
+      const response = await axios.get('/api/v1/motor');
       const motorData = response.data;
       const notWorkingCount = motorData.filter((motor) => motor.motorStatus === 'Not Working').length;
       const workingCount = motorData.filter((motor) => motor.motorStatus === 'Working').length;
