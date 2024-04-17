@@ -1,13 +1,13 @@
-import pg from 'pg';
+import pg from "pg";
 
 const { Pool } = pg;
 
 const pool = new Pool({
-  host: "localhost",
+  host: "",
   user: "postgres",
   password: "123456789",
   port: 5001,
-  database: "gail"
+  database: "gail",
 });
 
 const db = {

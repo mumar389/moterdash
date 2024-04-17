@@ -8,7 +8,7 @@ const GraphC = () => {
   const [Chart, setChart] = useState(null);
 
   useEffect(() => {
-    const socket = io('http://localhost:http://qts.iitkgp.ac.in/last/gail/current/2'); // Replace with your backend URL
+    const socket = io('http://qts.iitkgp.ac.in/last/gail/current/2'); // Replace with your backend URL
     socket.on('Time', (data) => {
       setTimeData((prevData) => [...prevData, data]);
     });
